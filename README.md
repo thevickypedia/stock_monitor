@@ -13,7 +13,7 @@ A report on the list of shares you have purchased
 
 1. git clone this repository
 
-2. Run this command in your terminal to install necessary packages<br />cd stock_monitor/lib && pip3 install -r requirements.txt
+2. Run this command in your terminal to install necessary packages<br/>cd stock_monitor/lib && pip3 install -r requirements.txt
 
 2. Make sure you add the following env variables
 * UAL, EXPE, RCL, DFS - The price you bought these stock for (change values as these are my portfolio)
@@ -40,4 +40,4 @@ Option 3:
 
 
 
-Note: The code was built from the scratch but it was built with an intention to share knowledge and educational purpose. Parts of the code can be easily hard coded but left as env to increase redundancy. The application is extremely customizable so remove files or part of code where ever unnecessary.
+Note: The code was built from the scratch but it was built with an intention to share knowledge and educational purpose.<br/>Parts of the code can be easily hard coded but left as env to increase redundancy.<br/>The application is extremely customizable so remove/add files or part of code where ever unnecessary.
