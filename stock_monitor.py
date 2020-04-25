@@ -18,7 +18,7 @@ def email_formatter():
     RCL_info = RCLChecker().statistics()
     DFS_info = DFSChecker().statistics()
 
-    if UAL_info or EXPE_info or RCL_info or DFS_info is None:
+    if UAL_info or EXPE_info or RCL_info or DFS_info:
         email_text = 'Stock Monitoring Notification\n'
 
         if UAL_info:
