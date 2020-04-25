@@ -2,6 +2,8 @@
 import os
 import sys
 
+from twilio.rest import Client
+
 from lib.DFS_checker import DFSChecker
 from lib.EXPE_checker import EXPEChecker
 from lib.RCL_checker import RCLChecker
@@ -39,8 +41,8 @@ def email_formatter():
         sys.exit()
 
 
-if __name__ == '__main__':
-    sender_env = os.getenv('SEND')
+def send_email():
+    sender_env = os.getenv('SENDER')
     recipient_env = os.getenv('RECIPIENT')
     git_env = os.getenv('GIT')
     footer_text = "\n----------------------------------------------------------------" \
@@ -52,4 +54,25 @@ if __name__ == '__main__':
     recipient = [f'{recipient_env}']
     title = 'Stock Monitor Alert'
     text = f'{email_formatter()}\n\n{footer_text}'
-    Emailer(sender, recipient, title, text)
+    email = Emailer(sender, recipient, title, text)
+    return email
+
+
+def send_whatsapp():
+    sid = os.getenv('SID')
+    token = os.getenv('TOKEN')
+    sender = os.getenv('SEND')
+    receiver = os.getenv('RECEIVE')
+    client = Client(sid, token)
+    from_number = sender
+    to_number = receiver
+
+    logs = 'https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#logs:'
+    client.messages.create(body=f'Stock Monitoring Notification\nLog info here\n{logs}',
+                           from_=from_number,
+                           to=to_number)
+
+
+if __name__ == '__main__':
+    send_email()
+    send_whatsapp()

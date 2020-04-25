@@ -41,4 +41,5 @@ class UALChecker:
             logger.info(f'\n{msg}\n')
         elif diff < 0:
             message = f'Time to buy new shares.\n\nData as of {dt_string}:\n{msg}\n'
+            logger.info(f'\n{message}\n')
             return message
