@@ -33,7 +33,7 @@ Option 1:
   
 Option 2:
   * Create a .sh file with the above environment variables and run it or manually set each environment variable
-  * Run the command "python3 stock_monitor/stock_monitor.py"
+  * Run the command<br/>python3 stock_monitor/stock_monitor.py
   
 Option 3:
   * Install a docker and set the entry point to stock_monitor.py
