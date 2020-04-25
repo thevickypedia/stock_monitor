@@ -14,7 +14,7 @@ A report on the list shares you have purchased
 1. git clone this repository
 
 2. Run this command in your terminal to install necessary packages
-cd Stock_Monitor/lib && pip3 install -r requirements.txt
+cd stock_monitor/lib && pip3 install -r requirements.txt
 
 2. Make sure you add the following env variables
 * UAL, EXPE, RCL, DFS - The price you bought these stock for (change values as these are my portfolio)
@@ -34,7 +34,7 @@ Option 1:
   
 Option 2:
   * Create a .sh file with the above environment variables and run it or manually set each environment variable
-  * Run the command "python3 Stock_Monitor/stock_monitor.py"
+  * Run the command "python3 stock_monitor/stock_monitor.py"
   
 Option 3:
   * Install a docker and set the entry point to stock_monitor.py
