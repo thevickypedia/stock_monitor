@@ -1,5 +1,5 @@
 # Stock Monitor
-A report on the list shares you have purchased
+A report on the list of shares you have purchased
 
 ## Pre-Req:
 
