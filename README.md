@@ -17,13 +17,13 @@ A report on the list shares you have purchased
 cd Stock_Monitor/lib && pip3 install -r requirements.txt
 
 2. Make sure you add the following env variables
-UAL, EXPE, RCL, DFS - The price you bought these stock for
-ACCESS_KEY - AWS access key id
-SECRET_KEY - AWS secret access key
-AWS_DEFAULT_REGION - Any AWS region where you have your 
-SEND - sender email address (verified via AWS SES)
-RECIPIENT - receiver email address (verified via AWS SES)
-GIT - git repo (hard code it)
+* UAL, EXPE, RCL, DFS - The price you bought these stock for
+* ACCESS_KEY - AWS access key id
+* SECRET_KEY - AWS secret access key
+* AWS_DEFAULT_REGION - Any AWS region where you have your 
+* SEND - sender email address (verified via AWS SES)
+* RECIPIENT - receiver email address (verified via AWS SES)
+* GIT - git repo (hard code it)
 
 ## Usage
 
