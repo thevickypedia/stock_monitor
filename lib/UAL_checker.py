@@ -27,7 +27,7 @@ class UALChecker:
         percent = re.findall(r"\d+\.\d+", str(raw_data))
 
         if 'At close' in str(raw_data):
-            logger.info('\nAfter Market Hours\nCheck for yourself lazy ASS\n\n')
+            logger.info('\nAfter Market Hours\nCheck for yourself lazy ASS\n')
             result = 'currently no change. Last change:'
         elif 'negativeColor' in str(raw_data):
             result = 'decreased'

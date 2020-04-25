@@ -17,7 +17,7 @@ def email_formatter():
     RCL_info = RCLChecker().statistics()
     DFS_info = DFSChecker().statistics()
 
-    if UAL_info or EXPE_info or RCL_info or DFS_info:
+    if UAL_info or EXPE_info or RCL_info or DFS_info is None:
         email_text = 'Stock Monitoring Notification\n'
 
         if UAL_info:
@@ -61,8 +61,8 @@ def send_email():
 def send_whatsapp():
     sid = os.getenv('SID')
     token = os.getenv('TOKEN')
-    sender = os.getenv('SEND')
-    receiver = os.getenv('RECEIVE')
+    sender = f"whatsapp:{os.getenv('SEND')}"
+    receiver = f"whatsapp:{os.getenv('RECEIVE')}"
     client = Client(sid, token)
     from_number = sender
     to_number = receiver
