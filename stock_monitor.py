@@ -2,11 +2,10 @@
 import os
 import sys
 
-from lib.UAL_checker import UALChecker
+from lib.DFS_checker import DFSChecker
 from lib.EXPE_checker import EXPEChecker
 from lib.RCL_checker import RCLChecker
-from lib.DFS_checker import DFSChecker
-
+from lib.UAL_checker import UALChecker
 from lib.emailer import Emailer
 
 
@@ -46,7 +45,8 @@ if __name__ == '__main__':
     git_env = os.getenv('GIT')
     footer_text = "\n----------------------------------------------------------------" \
                   "----------------------------------------\n" \
-                  "A report on the list shares you have purchased. The data is being collected from https://finance.yahoo.com, " \
+                  "A report on the list shares you have purchased. " \
+                  "The data is being collected from https://finance.yahoo.com," \
                   f"\nFor more information check README.md in {git_env}"
     sender = f'Stock Hawk <{sender_env}>'
     recipient = [f'{recipient_env}']

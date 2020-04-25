@@ -2,7 +2,6 @@
 import logging
 import os
 import re
-import sys
 from datetime import datetime
 
 import requests
@@ -17,7 +16,7 @@ dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
 
 class DFSChecker:
     def statistics(self):
-        logging.basicConfig(level=logging.INFO, format='%(asctime)s %(levelname)s %(message)s')
+        logging.basicConfig(level=logging.INFO, format='%(asctime)s %(message)s')
         logger = logging.getLogger('UAL_checker.py')
 
         global result
