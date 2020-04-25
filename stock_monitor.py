@@ -1,6 +1,7 @@
 #! /usr/bin/env python3
 import os
 import sys
+from datetime import datetime
 
 from twilio.rest import Client
 
@@ -17,7 +18,7 @@ def email_formatter():
     RCL_info = RCLChecker().statistics()
     DFS_info = DFSChecker().statistics()
 
-    if UAL_info or EXPE_info or RCL_info or DFS_info:
+    if UAL_info or EXPE_info or RCL_info or DFS_info is None:
         email_text = 'Stock Monitoring Notification\n'
 
         if UAL_info:
@@ -59,6 +60,8 @@ def send_email():
 
 
 def send_whatsapp():
+    now = datetime.now()
+    dt_string = now.strftime("%A, %B %d, %Y %I:%M %p")
     sid = os.getenv('SID')
     token = os.getenv('TOKEN')
     sender = f"whatsapp:{os.getenv('SEND')}"
@@ -68,7 +71,7 @@ def send_whatsapp():
     to_number = receiver
     send_email()
     logs = 'https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#logs:'
-    client.messages.create(body=f'Stock Monitoring Notification\nLog info here\n{logs}',
+    client.messages.create(body=f'{dt_string}\n\nStock Monitoring Notification\nLog info here\n{logs}',
                            from_=from_number,
                            to=to_number)
 

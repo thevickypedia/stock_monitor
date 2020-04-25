@@ -11,7 +11,7 @@ stock = 'EXPE'
 stock_price = os.getenv('EXPE')
 
 now = datetime.now()
-dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
+dt_string = now.strftime("%m/%d/%Y %H:%M:%S")
 
 
 class EXPEChecker:
