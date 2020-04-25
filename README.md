@@ -40,4 +40,4 @@ Option 3:
 
 
 
-Note: The code was built from the scratch but it was built with an intention to share knowledge and educational purpose.<br/>Parts of the code can be easily hard coded but left as env to increase redundancy.<br/>The application is extremely customizable so remove/add files or part of code where ever unnecessary.
+Note: The code was built from the scratch but it was built with an intention to share knowledge and for educational purpose.<br/>Parts of the code can be easily hard coded but left as env to increase redundancy.<br/>The application is extremely customizable so remove/add files or part of code where ever unnecessary.
