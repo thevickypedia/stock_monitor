@@ -66,7 +66,7 @@ def send_whatsapp():
     client = Client(sid, token)
     from_number = sender
     to_number = receiver
-
+    send_email()
     logs = 'https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#logs:'
     client.messages.create(body=f'Stock Monitoring Notification\nLog info here\n{logs}',
                            from_=from_number,
@@ -74,5 +74,4 @@ def send_whatsapp():
 
 
 if __name__ == '__main__':
-    send_email()
     send_whatsapp()
