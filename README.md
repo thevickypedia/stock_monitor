@@ -1,2 +1,44 @@
 # Stock_Monitor
 A report on the list shares you have purchased
+
+## Pre-Req:
+
+1. AWS account
+
+2. Verify sender and recipient (can be same but not advisable) email addresses in AWS SES (Simple Email Service)
+
+3. Create a lambda function or ECS task if you wish to run this on a cron schedule / on demand (optional as you can run it using your local interpreter)
+
+## Setup
+
+1. git clone this repository
+
+2. Run this command in your terminal to install necessary packages
+cd Stock_Monitor/lib && pip3 install -r requirements.txt
+
+2. Make sure you add the following env variables
+UAL, EXPE, RCL, DFS - The price you bought these stock for
+ACCESS_KEY - AWS access key id
+SECRET_KEY - AWS secret access key
+AWS_DEFAULT_REGION - Any AWS region where you have your 
+SEND - sender email address (verified via AWS SES)
+RECIPIENT - receiver email address (verified via AWS SES)
+GIT - git repo (hard code it)
+
+## Usage
+
+Option 1:
+  * Download an interpreter such as pycharm [here](https://www.jetbrains.com/pycharm/download/download-thanks.html).
+  * Setup python3 interpreter
+  * Add environment variables in configurations
+  
+Option 2:
+  * Create a .sh file with the above environment variables and run it or manually set each environment variable
+  * Run the command "python3 Stock_Monitor/stock_monitor.py"
+  
+Option 3:
+  * Install a docker and set the entry point to stock_monitor.py
+
+
+
+Note: The code was built from the scratch but it was built with an intension to share knowledge and educational purpose. Parts of the code can be easily hard coded but left as env to increase redundancy. It is extremely customizable so remove files and part of code where ever necessary.
