@@ -17,7 +17,7 @@ A report on the list shares you have purchased
 cd Stock_Monitor/lib && pip3 install -r requirements.txt
 
 2. Make sure you add the following env variables
-* UAL, EXPE, RCL, DFS - The price you bought these stock for
+* UAL, EXPE, RCL, DFS - The price you bought these stock for (change values as these are my portfolio)
 * ACCESS_KEY - AWS access key id
 * SECRET_KEY - AWS secret access key
 * AWS_DEFAULT_REGION - Any AWS region where you have your 
