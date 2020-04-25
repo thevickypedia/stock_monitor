@@ -23,7 +23,7 @@ class DFSChecker:
         price = raw_data.find('span').text
         percent = re.findall(r"\d+\.\d+", str(raw_data))
 
-        if 'tertiaryColor' in str(raw_data) and len(percent) > 5:
+        if 'At close' in str(raw_data):
             print('After Market Hours\nCheck for yourself lazy ASS')
             sys.exit()
         elif 'negativeColor' in str(raw_data):
