@@ -1,10 +1,12 @@
 #! /usr/bin/env python3
 import os
+import sys
 
-from lib.DFS_checker import DFSChecker
+from lib.UAL_checker import UALChecker
 from lib.EXPE_checker import EXPEChecker
 from lib.RCL_checker import RCLChecker
-from lib.UAL_checker import UALChecker
+from lib.DFS_checker import DFSChecker
+
 from lib.emailer import Emailer
 
 
@@ -14,25 +16,28 @@ def email_formatter():
     RCL_info = RCLChecker().statistics()
     DFS_info = DFSChecker().statistics()
 
-    email_text = 'Stock Monitoring Notification\n'
+    if UAL_info or EXPE_info or RCL_info or DFS_info:
+        email_text = 'Stock Monitoring Notification\n'
 
-    if UAL_info:
-        email_text += '\nUnited Airlines Report:\n'
-        email_text += UAL_info
+        if UAL_info:
+            email_text += '\nUnited Airlines Report:\n'
+            email_text += UAL_info
 
-    if EXPE_info:
-        email_text += '\nExpedia Report:\n'
-        email_text += EXPE_info
+        if EXPE_info:
+            email_text += '\nExpedia Report:\n'
+            email_text += EXPE_info
 
-    if RCL_info:
-        email_text += '\nRoyal Caribbean Report:\n'
-        email_text += RCL_info
+        if RCL_info:
+            email_text += '\nRoyal Caribbean Report:\n'
+            email_text += RCL_info
 
-    if DFS_info:
-        email_text += '\nDiscover Report:\n'
-        email_text += DFS_info
+        if DFS_info:
+            email_text += '\nDiscover Report:\n'
+            email_text += DFS_info
 
-    return email_text
+        return email_text
+    else:
+        sys.exit()
 
 
 if __name__ == '__main__':
