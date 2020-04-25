@@ -42,7 +42,7 @@ Option 2:
 Option 3:
   * Install a docker and set the entry point to stock_monitor.py
 
-Click [here](https://www.twilio.com/docs/whatsapp/quickstart/python) to get started with Twilio.<br/>If you prefer not to use whats app notifications then simply change send_whatsapp() to send_email() in [stock_monitor.py](https://github.com/vignesh1793/stock_monitor/blob/master/stock_monitor.py#L77)<br/>By doing this the [send_whatsapp()](https://github.com/vignesh1793/stock_monitor/blob/master/stock_monitor.py#L61-L73) function will never be called.
+Click [here](https://www.twilio.com/docs/whatsapp/quickstart/python) to get started with Twilio.<br/>If you prefer not to use whats app notifications then simply change send_whatsapp() to send_email() in [stock_monitor.py](https://github.com/vignesh1793/stock_monitor/blob/master/stock_monitor.py#L80)<br/>By doing this the [send_whatsapp()](https://github.com/vignesh1793/stock_monitor/blob/master/stock_monitor.py#L62-L76) function will never be called.
 
 
 Note: The code was built from the scratch but it was built with an intention to share knowledge and for educational purpose.<br/>Parts of the code can be easily hard coded but left as env to increase redundancy.<br/>The application is extremely customizable so remove/add files or part of code where ever unnecessary.
