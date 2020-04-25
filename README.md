@@ -31,7 +31,7 @@ A report on the list of shares you have purchased
 ## Usage
 
 Option 1:
-  * Download an interpreter such as [pycharm](https://www.jetbrains.com/pycharm/download/download-thanks.html).
+  * Download an IDE such as [pycharm](https://www.jetbrains.com/pycharm/download/download-thanks.html).
   * Setup python3 interpreter
   * Add environment variables in configurations
   
