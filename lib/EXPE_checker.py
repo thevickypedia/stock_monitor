@@ -1,6 +1,7 @@
 #! /usr/bin/env python3
 import os
 import re
+import sys
 from datetime import datetime
 
 import requests
@@ -23,9 +24,8 @@ class EXPEChecker:
         percent = re.findall(r"\d+\.\d+", str(raw_data))
 
         if 'tertiaryColor' in str(raw_data) and len(percent) > 5:
-            # print('After Market Hours\nCheck for yourself lazy ASS')
-            result = 'currently no change. Last change:'
-            # sys.exit()
+            print('After Market Hours\nCheck for yourself lazy ASS')
+            sys.exit()
         elif 'negativeColor' in str(raw_data):
             result = 'decreased'
         elif 'positiveColor' in str(raw_data):
