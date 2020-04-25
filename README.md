@@ -7,7 +7,7 @@ A report on the list shares you have purchased
 
 2. Verify sender and recipient (can be same but not advisable) email addresses in AWS SES (Simple Email Service)
 
-3. Create a lambda function or ECS task if you wish to run this on a cron schedule / on demand (optional as you can run it using your local interpreter)
+3. Create a lambda function or ECS task if you wish to run this on a cron schedule / on demand (optional as you can run it using your local IDE)
 
 ## Setup
 
