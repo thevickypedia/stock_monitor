@@ -12,7 +12,7 @@ class Emailer:
             # vig
             aws_access_key_id=os.getenv('ACCESS_KEY'),
             aws_secret_access_key=os.getenv('SECRET_KEY'),
-        ).client('ses', region_name=os.getenv('AWS_DEFAULT_REGION'))
+        ).client('ses', region_name=os.getenv('REGION'))
 
         response_ = self.send_mail(boto3_ses_client, sender, recipients, title, text)
         print(response_)
