@@ -19,7 +19,7 @@ A report on the list of shares you have purchased
 * UAL, EXPE, RCL, DFS - The price you bought these stock for (change values as these are my portfolio)
 * ACCESS_KEY - AWS access key id
 * SECRET_KEY - AWS secret access key
-* AWS_DEFAULT_REGION - Any AWS region where you have your 
+* REGION - Any AWS region where you have your lambda/ecs setup
 * SENDER - sender email address (verified via AWS SES)
 * RECIPIENT - receiver email address (verified via AWS SES)
 * GIT - git repo (hard code it)
