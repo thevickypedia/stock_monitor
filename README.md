@@ -22,7 +22,6 @@ A report on the list of shares you have purchased
 * REGION - Any AWS region where you have your lambda/ecs setup
 * SENDER - sender email address (verified via AWS SES)
 * RECIPIENT - receiver email address (verified via AWS SES)
-* GIT - git repo (hard code it)
 * SID - s-id from twilio
 * TOKEN - token from twilio
 * SEND - sender whats app number (fromat - +1xxxxxxxxxx)
