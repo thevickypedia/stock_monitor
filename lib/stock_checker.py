@@ -1,4 +1,10 @@
 #! /usr/bin/env python3
+"""/**
+ * Author:  Vignesh Sivanandha Rao
+ * Created:   04.24.2020
+ *
+ **/"""
+
 import os
 import re
 
@@ -8,7 +14,6 @@ from datetime import datetime, timedelta
 
 current_time = datetime.now()
 utc_to_cdt = current_time - timedelta(hours=5)
-# dt_string = utc_to_cdt.strftime("%m/%d/%Y %H:%M:%S")
 dt_string = utc_to_cdt.strftime("%A, %B %d, %Y %I:%M %p")
 
 
