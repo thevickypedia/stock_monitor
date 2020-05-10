@@ -52,13 +52,13 @@ def send_email():
     if email_formatter():
         sender_env = os.getenv('SENDER')
         recipient_env = os.getenv('RECIPIENT')
-        git_env = os.getenv('GIT')
+        git = 'https://github.com/vignesh1793/stock_monitor'
         footer_text = "\n----------------------------------------------------------------" \
                       "----------------------------------------\n" \
                       "A report on the list shares you have purchased that has either deceeded the MIN purchase " \
                       "value or exceeded the MAX selling value.\n" \
                       "The data is being collected from https://finance.yahoo.com," \
-                      f"\nFor more information check README.md in {git_env}"
+                      f"\nFor more information check README.md in {git}"
         sender = f'Stock Hawk <{sender_env}>'
         recipient = [f'{recipient_env}']
         title = 'Stock Monitor Alert'
