@@ -27,8 +27,7 @@ A report on the list of shares you have purchased
 * TOKEN - token from twilio
 * SEND - sender whats app number (fromat - +1xxxxxxxxxx)
 * RECEIVE - receiver whats app number (fromat - +1xxxxxxxxxx)
-* UAL_threshold - threshold value for UAL
-* EXPE_threshold, RCL_threshold, DFS_threshold - The threshold difference after which you'd like to be notified (ex: If you have bought XXX stock for $60 and currently it is $63, if your threshold is < 3 you will be notified)
+* UAL_threshold, EXPE_threshold, RCL_threshold, DFS_threshold - The threshold difference after which you'd like to be notified (ex: If you have bought XXX stock for $60 and currently it is $63, if your threshold is < 3 you will be notified)
 * UAL_max, EXPE_max, RCL_max, DFS_max - Maximum value after which you'd like to be notified
 
 ## Usage
