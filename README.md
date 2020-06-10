@@ -13,7 +13,7 @@ A report on the list of shares you have purchased
 
 1. git clone this repository
 
-2. Run this command in your terminal to install necessary packages<br/>cd stock_monitor/lib && pip3 install -r requirements.txt
+2. Run this command in your terminal to install necessary packages<br/>cd yahoo_finance_monitor/lib && pip3 install -r requirements.txt
 
 2. Make sure you add the following env variables
 * UAL, EXPE, RCL, DFS - The price you bought these stock for (change values as these are my portfolio)
@@ -42,7 +42,7 @@ Option 1:
   
 Option 2:
   * Create a .sh file with the above environment variables and run it or manually set each environment variable
-  * Run the command<br/>python3 stock_monitor/stock_monitor.py
+  * Run the command<br/>python3 yahoo_finance_monitor/stock_monitor.py
   
 Option 3:
   * Install a docker and set the entry point to stock_monitor.py

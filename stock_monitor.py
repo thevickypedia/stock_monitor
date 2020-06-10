@@ -52,7 +52,7 @@ def send_email():
     if email_formatter():
         sender_env = os.getenv('SENDER')
         recipient_env = os.getenv('RECIPIENT')
-        git = 'https://github.com/thevickypedia/stock_monitor'
+        git = 'https://github.com/thevickypedia/yahoo_finance_monitor'
         footer_text = "\n----------------------------------------------------------------" \
                       "----------------------------------------\n" \
                       "A report on the list shares you have purchased that has either deceeded the MIN purchase " \
