@@ -19,18 +19,15 @@ A report on the list of shares you have purchased
 * UAL, EXPE, RCL, DFS - The price you bought these stock for (change values as these are my portfolio)
 * ACCESS_KEY - AWS access key id
 * SECRET_KEY - AWS secret access key
-* REGION - Any AWS region where you have your lambda/ecs setup
 * SENDER - sender email address (verified via AWS SES)
 * RECIPIENT - receiver email address (verified via AWS SES)
 * ACCESS_KEY - AWS access to authenticate into your AWS account
 * SECRET_KEY - AWS secret key
-* REGION=us-west-2
 * SID - s-id from twilio
 * TOKEN - token from twilio
 * SEND - sender whats app number (fromat - +1xxxxxxxxxx)
 * RECEIVE - receiver whats app number (fromat - +1xxxxxxxxxx)
-* UAL_threshold - threshold value for UAL
-* EXPE_threshold, RCL_threshold, DFS_threshold - The threshold difference after which you'd like to be notified (ex: If you have bought XXX stock for $60 and currently it is $63, if your threshold is < 3 you will be notified)
+* UAL_threshold, EXPE_threshold, RCL_threshold, DFS_threshold - The threshold difference after which you'd like to be notified (ex: If you have bought XXX stock for $60 and currently it is $63, if your threshold is < 3 you will be notified)
 * UAL_max, EXPE_max, RCL_max, DFS_max - Maximum value after which you'd like to be notified
 
 ## Usage
