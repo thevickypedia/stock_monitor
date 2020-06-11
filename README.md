@@ -16,7 +16,6 @@ A report on the list of shares you have purchased
 2. Run this command in your terminal to install necessary packages<br/>cd yahoo_finance_monitor/lib && pip3 install -r requirements.txt
 
 2. Make sure you add the following env variables
-* UAL, EXPE, RCL, DFS - The price you bought these stock for (change values as these are my portfolio)
 * ACCESS_KEY - AWS access key id
 * SECRET_KEY - AWS secret access key
 * SENDER - sender email address (verified via AWS SES)
@@ -27,8 +26,10 @@ A report on the list of shares you have purchased
 * TOKEN - token from twilio
 * SEND - sender whats app number (fromat - +1xxxxxxxxxx)
 * RECEIVE - receiver whats app number (fromat - +1xxxxxxxxxx)
-* UAL_threshold, EXPE_threshold, RCL_threshold, DFS_threshold - The threshold difference after which you'd like to be notified (ex: If you have bought XXX stock for $60 and currently it is $63, if your threshold is < 3 you will be notified)
-* UAL_max, EXPE_max, RCL_max, DFS_max - Maximum value after which you'd like to be notified
+* stock_1 - Symbol for the stock you'd like to track (Eg: MSFT for Microsoft)
+* stock_1_min - The minimum value below which you'd like to be notified
+* stock_1_max - The maximum value above which you'd like to be notified
+* Note: Keep increasing the # as you want more stocks to be tracked. (Limit: 25)
 
 ## Usage
 
