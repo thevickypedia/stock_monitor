@@ -1,6 +1,8 @@
 # Stock Monitor
 A report on the list of shares you have purchased
 
+Click to visit the AWS version [Black Pearl](https://github.com/thevickypedia/black_pearl)
+
 ## Pre-Req:
 
 1. AWS account
