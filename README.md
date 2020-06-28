@@ -51,3 +51,9 @@ Click [here](https://www.twilio.com/docs/whatsapp/quickstart/python) to get star
 
 
 Note: The code was built from the scratch but it was built with an intention to share knowledge and for educational purpose.<br/>Parts of the code can be easily hard coded but left as env to increase reusability.<br/>The application is extremely customizable so remove/add parts of code where ever unnecessary.
+
+## License & copyright
+
+&copy; Vignesh Sivanandha Rao, Robinhood Monitor
+
+Licensed under the [MIT License](LICENSE)
