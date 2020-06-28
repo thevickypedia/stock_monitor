@@ -54,6 +54,6 @@ Note: The code was built from the scratch but it was built with an intention to 
 
 ## License & copyright
 
-&copy; Vignesh Sivanandha Rao, Robinhood Monitor
+&copy; Vignesh Sivanandha Rao, Stock Monitor
 
 Licensed under the [MIT License](LICENSE)
