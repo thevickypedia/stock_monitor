@@ -17,8 +17,7 @@ from lib.stock_checker import StockChecker
 now = datetime.now() - timedelta(hours=5)
 dt_string = now.strftime("%A, %B %d, %Y %I:%M %p")
 
-logs = 'https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#logStream:group=/aws/lambda' \
-       '/stock_hawk '
+logs = 'https://us-west-2.console.aws.amazon.com/cloudwatch/home#logStream:group=/aws/lambda/stock_hawk'
 
 
 def market_status():
@@ -148,8 +147,6 @@ def email_formatter():
 def send_email():
     email_data = email_formatter()
     if email_data:
-        sender_env = os.getenv('SENDER')
-        recipient_env = os.getenv('RECIPIENT')
         git = 'https://github.com/thevickypedia/yahoo_finance_monitor'
         footer_text = "\n----------------------------------------------------------------" \
                       "----------------------------------------\n" \
@@ -157,8 +154,8 @@ def send_email():
                       "value or exceeded the MAX selling value.\n" \
                       "The data is being collected from https://finance.yahoo.com," \
                       f"\nFor more information check README.md in {git}"
-        sender = f'Stock Hawk <{sender_env}>'
-        recipient = [f'{recipient_env}']
+        sender = f"Stock Hawk <{os.getenv('SENDER')}>"
+        recipient = [os.getenv('RECIPIENT')]
         title = 'Stock Monitor Alert'
         text = f'{email_data}\n\nNavigate to check logs: {logs}\n\n{footer_text}'
         Emailer(sender, recipient, title, text)
@@ -171,11 +168,9 @@ def send_whatsapp(data, context):
         whatsapp_msg = send_email()
         sid = os.getenv('SID')
         token = os.getenv('TOKEN')
-        sender = f"whatsapp:{os.getenv('SEND')}"
-        receiver = f"whatsapp:{os.getenv('RECEIVE')}"
+        from_number = f"whatsapp:{os.getenv('SEND')}"
+        to_number = f"whatsapp:{os.getenv('RECEIVE')}"
         client = Client(sid, token)
-        from_number = sender
-        to_number = receiver
         client.messages.create(body=f'{dt_string}\n\n{whatsapp_msg}Log info here\n{logs}',
                                from_=from_number,
                                to=to_number)
