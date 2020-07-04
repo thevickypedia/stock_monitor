@@ -147,6 +147,7 @@ def email_formatter():
 def send_email():
     email_data = email_formatter()
     if email_data:
+        print('Sending email notification..')
         git = 'https://github.com/thevickypedia/yahoo_finance_monitor'
         footer_text = "\n----------------------------------------------------------------" \
                       "----------------------------------------\n" \
@@ -164,16 +165,18 @@ def send_email():
 
 # two arguments for the below functions as lambda passes event, context by default
 def send_whatsapp(data, context):
-    if market_status() and send_email():
+    if market_status():
         whatsapp_msg = send_email()
-        sid = os.getenv('SID')
-        token = os.getenv('TOKEN')
-        from_number = f"whatsapp:{os.getenv('SEND')}"
-        to_number = f"whatsapp:{os.getenv('RECEIVE')}"
-        client = Client(sid, token)
-        client.messages.create(body=f'{dt_string}\n\n{whatsapp_msg}Log info here\n{logs}',
-                               from_=from_number,
-                               to=to_number)
+        if whatsapp_msg:
+            print('Sending whats app notification..')
+            sid = os.getenv('SID')
+            token = os.getenv('TOKEN')
+            from_number = f"whatsapp:{os.getenv('SEND')}"
+            to_number = f"whatsapp:{os.getenv('RECEIVE')}"
+            client = Client(sid, token)
+            client.messages.create(body=f'{dt_string}\n\n{whatsapp_msg}Log info here\n{logs}',
+                                   from_=from_number,
+                                   to=to_number)
     else:
         return
 
