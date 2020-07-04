@@ -6,8 +6,9 @@
  **/"""
 
 import os
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date
 
+import requests
 from twilio.rest import Client
 
 from lib.emailer import Emailer
@@ -17,7 +18,18 @@ now = datetime.now() - timedelta(hours=5)
 dt_string = now.strftime("%A, %B %d, %Y %I:%M %p")
 
 logs = 'https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#logStream:group=/aws/lambda' \
-               '/stock_hawk '
+       '/stock_hawk '
+
+
+def market_status():
+    url = requests.get('https://www.nasdaqtrader.com/trader.aspx?id=Calendar')
+    today = date.today().strftime("%B %-d, %Y")
+    if today in url.text:
+        # doesn't return anything which exits the code
+        print(f'{today}: The markets are closed today.')
+    else:
+        # you can return any random value but it should return something
+        return True
 
 
 def email_formatter():
@@ -155,7 +167,8 @@ def send_email():
 
 # two arguments for the below functions as lambda passes event, context by default
 def send_whatsapp(data, context):
-    if send_email():
+    if market_status() and send_email():
+        whatsapp_msg = send_email()
         sid = os.getenv('SID')
         token = os.getenv('TOKEN')
         sender = f"whatsapp:{os.getenv('SEND')}"
@@ -163,11 +176,11 @@ def send_whatsapp(data, context):
         client = Client(sid, token)
         from_number = sender
         to_number = receiver
-        client.messages.create(body=f'{dt_string}\n\nStock Monitoring Notification\nLog info here\n{logs}',
+        client.messages.create(body=f'{dt_string}\n\n{whatsapp_msg}Log info here\n{logs}',
                                from_=from_number,
                                to=to_number)
     else:
-        return None
+        return
 
 
 if __name__ == '__main__':
