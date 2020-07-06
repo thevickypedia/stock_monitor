@@ -151,8 +151,8 @@ def send_email():
         git = 'https://github.com/thevickypedia/yahoo_finance_monitor'
         footer_text = "\n----------------------------------------------------------------" \
                       "----------------------------------------\n" \
-                      "A report on the list shares you have purchased that has either deceeded the MIN purchase " \
-                      "value or exceeded the MAX selling value.\n" \
+                      "Notification on shares that has either deceeded the MIN " \
+                      "value or exceeded the MAX value.\n" \
                       "The data is being collected from https://finance.yahoo.com," \
                       f"\nFor more information check README.md in {git}"
         sender = f"Stock Hawk <{os.getenv('SENDER')}>"

@@ -1,5 +1,5 @@
 # Stock Monitor
-A report on the list of shares you have purchased
+Get notified when shares deceed the MIN value or exceed the MAX value you have set.
 
 Click to visit the AWS version [Black Pearl](https://github.com/thevickypedia/black_pearl)
 
